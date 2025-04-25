@@ -24,7 +24,13 @@ const userSchema = mongoose.Schema({
     address: {
         type:String,
     },
+    isVerified : {
+        type:Boolean,
+        default : false
+    },
     dob:Number,
     failedAttempts: { type: Number, default: 0 },
     lockUntil: { type: Date, default: null },
 })
+const User = mongoose.model("User", userSchema)
+module.exports = User
